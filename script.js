@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function getSongs(folder) {
         currentFolder=folder;
-        let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+        let a = await fetch(`/${folder}/`);
         let response = await a.text();
         let div = document.createElement("div");
         div.innerHTML = response;
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     async function displayAlbum() {
         // Fetch the HTML of the songs directory
-        let response = await fetch("http://127.0.0.1:5500/songs/");
+        let response = await fetch("/songs/");
         let html = await response.text();
         let div = document.createElement("div");
     
